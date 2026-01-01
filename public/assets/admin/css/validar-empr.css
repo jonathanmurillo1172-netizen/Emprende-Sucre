@@ -1,0 +1,84 @@
+/* CONTENEDOR */
+.categories-header {
+    max-width: 720px;
+}
+
+/* TÍTULO */
+.categories-title {
+    font-size: 1.875rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/* TEXTO ESCRIBIÉNDOSE */
+.typing-cat {
+    display: inline-block;
+    margin-left: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    width: 0;
+    padding-right: 4px;
+    border-right: 2px solid rgba(168, 85, 247, 0.9);
+
+    animation: typingSmoothCat 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+        caretSmoothCat 1s ease-in-out infinite;
+}
+
+/* SUBTÍTULO */
+.categories-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #64748b;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: subtitleFadeCat 0.5s ease-out 2s forwards;
+}
+
+/* ANIMACIONES */
+@keyframes typingSmoothCat {
+    from {
+        width: 0;
+    }
+    to {
+        width: 16ch;
+    } /* "Emprendimientos" */
+}
+
+@keyframes caretSmoothCat {
+    0%,
+    45% {
+        border-color: rgba(168, 85, 247, 0.9);
+    }
+    50%,
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes subtitleFadeCat {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .categories-title {
+        font-size: 1.5rem;
+    }
+
+    .categories-subtitle {
+        font-size: 1rem;
+    }
+}

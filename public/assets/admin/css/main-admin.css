@@ -1,0 +1,16 @@
+@keyframes bgFlow {
+    0% {
+        background-position: 0% 0%, 100% 100%, 0% 50%;
+    }
+    50% {
+        background-position: 100% 0%, 0% 100%, 100% 50%;
+    }
+    100% {
+        background-position: 0% 0%, 100% 100%, 0% 50%;
+    }
+}
+
+.animate-bg-flow {
+    background-size: 200% 200%, 200% 200%, 100% 100%;
+    animation: bgFlow 25s ease-in-out infinite;
+}

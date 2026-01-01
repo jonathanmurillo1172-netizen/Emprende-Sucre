@@ -1,0 +1,71 @@
+/* CONTENEDOR */
+.categories-header {
+    max-width: 720px;
+}
+
+/* TÍTULO */
+.categories-title {
+    font-size: 1.875rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #1e293b; 
+    line-height: 1.2;
+}
+
+/* TEXTO ESCRIBIÉNDOSE */
+.typing-cat {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    width: 0;
+    padding-right: 4px;
+    border-right: 2px solid rgba(168, 85, 247, 0.8);
+
+    animation: typingSmoothCat 1.7s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+        caretSmoothCat 1s ease-in-out infinite;
+}
+
+/* SUBTÍTULO */
+.categories-subtitle {
+    margin-top: 0.25rem;
+    font-weight: 500;
+    color: #64748b; /* slate-500 */
+    opacity: 0;
+    transform: translateY(6px);
+    animation: subtitleFadeCat 0.45s ease-out 1.9s forwards;
+}
+
+/* ANIMACIONES */
+@keyframes typingSmoothCat {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10ch;
+    } /* Categorías */
+}
+
+@keyframes caretSmoothCat {
+    0%,
+    45% {
+        border-color: rgba(168, 85, 247, 0.9);
+    }
+    50%,
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes subtitleFadeCat {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
