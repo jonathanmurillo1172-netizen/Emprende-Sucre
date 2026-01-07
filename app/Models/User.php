@@ -8,6 +8,16 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $role
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property-read \App\Models\Entrepreneur|null $entrepreneur
+ * @property-read \App\Models\Admin|null $admin
+ */
 class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */

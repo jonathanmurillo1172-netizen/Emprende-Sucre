@@ -4,6 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $id
+ * @property int $entrepreneur_id
+ * @property int $category_id
+ * @property string $title
+ * @property string $image
+ * @property string $description
+ * @property string $location
+ * @property string $status
+ * @property-read \App\Models\Entrepreneur $entrepreneur
+ * @property-read \App\Models\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Inquiry[] $inquiries
+ */
 class Venture extends Model
 {
     protected $fillable = [

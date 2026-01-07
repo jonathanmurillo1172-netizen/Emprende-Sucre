@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::statement("ALTER TABLE ventures MODIFY COLUMN status ENUM('active', 'inactive', 'disabled') DEFAULT 'active'");
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement("ALTER TABLE ventures MODIFY COLUMN status ENUM('active', 'inactive', 'disabled') DEFAULT 'active'");
+        }
     }
 
     /**
@@ -19,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::statement("ALTER TABLE ventures MODIFY COLUMN status ENUM('active', 'inactive') DEFAULT 'active'");
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement("ALTER TABLE ventures MODIFY COLUMN status ENUM('active', 'inactive') DEFAULT 'active'");
+        }
     }
 };
